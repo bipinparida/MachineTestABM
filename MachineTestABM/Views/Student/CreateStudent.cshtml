@@ -1,0 +1,89 @@
+﻿@model MachineTestABM.DTO.StudentCreateDTO
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Student Create</h3>
+    <a class="btn btn-primary" href="/Student/StudentView">Student List</a>
+</div>
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="row">
+
+        <div class="col-6 mt-2">
+            <label class="form-label"> Name </label>
+            <input type="text" class="form-control" asp-for="Name" required />
+        </div>
+
+        <div class="col-6 mt-2">
+            <label class="form-label"> Address </label>
+            <input type="text" class="form-control" asp-for="Address" required />
+        </div>
+
+        <div class="col-6 mt-2">
+            <label class="form-label"> Phone1 </label>
+            <input type="text" class="form-control" asp-for="Phone1" required />
+        </div>
+        <div class="col-6 mt-2">
+            <label class="form-label"> Phone2 </label>
+            <input type="text" class="form-control" asp-for="Phone2" required />
+        </div>
+
+        <div class="col-6 mt-2">
+            <label class="form-label"> Email </label>
+            <input type="email" class="form-control" asp-for="Email" required />
+        </div>
+
+        <div class="col-6 mt-2">
+            <label class="form-label"> DOB </label>
+            <input type="datetime-local" class="form-control" asp-for="DOB" required />
+        </div>
+
+        <div class="col-6 mt-2">
+            <label class="form-label">City</label>
+            <select class="form-select" asp-for="City" required>
+                <option value="">-Please Select City-</option>
+                <option value="City1">City1</option>
+                <option value="City2">City2</option>
+                <option value="City3">City3</option>
+                <option value="City4">City4</option>
+                <option value="City5">City5</option>
+                <option value="City6">City6</option>
+                <option value="City7">City8</option>
+                <option value="City9">City9</option>
+                <option value="City10">City10</option>
+            </select>
+        </div>
+
+        <div class="col-6 mt-2">
+            <label class="form-label">State</label>
+            <select class="form-select" asp-for="State" required>
+                <option value="">-Please Select State-</option>
+                <option value="State1">State1</option>
+                <option value="State2">State2</option>
+                <option value="State3">State3</option>
+                <option value="State4">State4</option>
+                <option value="State5">State5</option>
+                <option value="State6">State6</option>
+                <option value="State7">State8</option>
+                <option value="State9">State9</option>
+                <option value="State10">State10</option>
+            </select>
+        </div>
+
+
+        <div class="mt-2 col-6">
+            <label class="form-label"> Image </label>
+            <input type="file" class="form-control" asp-for="ImageUp" />
+        </div>
+
+    </div>
+
+
+    <div class="d-flex gap-2 mt-2">
+
+        <button class="btn btn-primary" type="submit">Save </button>
+        <button class="btn btn-warning" type="reset"> Clear </button>
+
+    </div>
+
+</form>

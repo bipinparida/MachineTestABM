@@ -1,0 +1,55 @@
+﻿@model List<MachineTestABM.Models.Entities.Student>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Student List</h3>
+    <a class="btn btn-primary" href="/Student/CreateStudent">Student Create</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone1</th>
+            <th>Phone2</th>
+            <th>Email</th>
+            <th>BOB</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Address</td>
+                <td>@student.Phone1</td>
+                <td>@student.Phone2</td>
+                <td>@student.Email</td>
+                <td>@student.DOB</td>
+                <td>@student.City</td>
+                <td>@student.State</td>
+               @*  <td>@student.Image</td> *@
+                <td>
+                    <img src="/uploads/students/@student.Image" style="height:50px; width:42px; padding: 5px 0px 5px 0; border-radius:50%; object-fit: cover;" />
+                </td>
+
+
+                <td>
+                    <a class="btn btn-primary" asp-controller="Student" asp-action="EditStudent" asp-route-StudentId="@student.StudentId" > Edit </a>
+
+                    <form method="post" asp-controller="Student" asp-action="DeleteStudent" style="display:inline">
+                        <input type="hidden" name="StudentId" value="@student.StudentId" />
+                        <button type="submit" class="btn btn-danger"> Delete </button>
+
+                    </form>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>
